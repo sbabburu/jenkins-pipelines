@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    tools {
-        docker 'docker'
+    
     stages {
         stage ('Checkout') {
           steps {
@@ -16,6 +15,6 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
-    }
+    
     }
 }
